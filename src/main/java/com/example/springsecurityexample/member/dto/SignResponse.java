@@ -2,6 +2,7 @@ package com.example.springsecurityexample.member.dto;
 
 import com.example.springsecurityexample.member.Authority;
 import com.example.springsecurityexample.member.Member;
+import com.example.springsecurityexample.security.TokenDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,7 +27,7 @@ public class SignResponse {
 
     private List<Authority> roles = new ArrayList<>();
 
-    private String token;
+    private TokenDto token;
 
     public SignResponse(Member member) {
         this.id = member.getId();

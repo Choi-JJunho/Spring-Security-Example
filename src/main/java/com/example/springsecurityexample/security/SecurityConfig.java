@@ -1,6 +1,5 @@
 package com.example.springsecurityexample.security;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -60,7 +59,7 @@ public class SecurityConfig {
                 .and()
                 // 조건별로 요청 허용/제한 설정
                 .authorizeRequests()
-                .antMatchers("/register", "/login").permitAll()
+                .antMatchers("/register", "/login", "/refresh").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
                 .anyRequest().denyAll()
